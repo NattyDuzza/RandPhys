@@ -61,7 +61,7 @@ def MagneticFieldStrength(Lower_Radius, Upper_Radius):
 def LarmorRadius(Energy, Mass, Lower_Radius, Upper_Radius):
        lower = (np.sqrt(2*Energy*Mass)*(Lower_Radius**3))/(B0*(Rearth**3)*e)
        upper = (np.sqrt(2*Energy*Mass)*(Upper_Radius**3))/(B0*(Rearth**3)*e) 
-       return [lower/Rearth, upper/Rearth]
+       return [f"{lower}m, {lower/Rearth}radii", f"{upper}m, {upper/Rearth}radii"]
 
 # First compute inner belt
 print("----------------------------------------------------- \n Inner Belt:")
@@ -72,7 +72,8 @@ for i in range(0, len(B1)):
 # Then compute outer belt
 print("--------------------------------------------------- \n Outer Belt:")
 for i in range(0, len(B2)):
-       print(LarmorRadius(B2[0][i], B2[1][i], lower_bounds[0], upper_bounds[0]))
+       print(LarmorRadius(B2[0][i], B2[1][i], lower_bounds[1], upper_bounds[1]))
+
 
 
 
